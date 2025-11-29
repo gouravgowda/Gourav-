@@ -1,0 +1,151 @@
+.exercise-timer-card {
+    background: linear-gradient(145deg, #ffffff, #f0f4f8);
+    border-radius: 24px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    max-width: 400px;
+    margin: 0 auto;
+    animation: slideUp 0.5s ease-out;
+}
+
+.timer-header {
+    margin-bottom: 2rem;
+}
+
+.timer-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.timer-header h3 {
+    margin: 0;
+    color: #2d3748;
+    font-size: 1.5rem;
+}
+
+.timer-header p {
+    margin: 0.5rem 0 0;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.timer-display {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+}
+
+.circular-progress {
+    width: 100%;
+    height: 100%;
+}
+
+.circular-progress svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.progress-bg {
+    fill: none;
+    stroke: #e2e8f0;
+    stroke-width: 8;
+}
+
+.progress-fill {
+    fill: none;
+    stroke: #667eea;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.time-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.phase-text {
+    font-size: 1.1rem;
+    color: #764ba2;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+}
+
+.time-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2d3748;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.control-btn {
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.control-btn.play {
+    background: #48bb78;
+    color: white;
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+}
+
+.control-btn.pause {
+    background: #ed8936;
+    color: white;
+    box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
+}
+
+.control-btn.reset {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,382 +1,216 @@
 /* ===================================
-   💙 PREMIUM WELLBEING PAGE DESIGN
+   🧘 WELLBEING PAGE - PREMIUM DESIGN
    =================================== */
+
 .wellbeing-page {
-  padding: 2.5rem;
-  max-width: 1400px;
+  padding: 2rem;
+  max-width: 1600px;
   margin: 0 auto;
+  min-height: 80vh;
+}
+
+/* Header Hero Section */
+.wellbeing-header-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 24px;
+  padding: 3rem;
+  color: white;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(118, 75, 162, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  animation: slideDown 0.6s ease-out;
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.header-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Quick Actions / Tabs */
+.quick-actions {
+  display: flex;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.action-pill {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.action-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.action-pill.active {
+  background: white;
+  color: #764ba2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Area */
+.wellbeing-content {
+  position: relative;
+}
+
+.tab-content {
   animation: fadeIn 0.5s ease-out;
 }
 
-/* Page Header */
-.page-header {
-  margin-bottom: 2.5rem;
-  animation: fadeInDown 0.6s ease-out;
-}
-
-.page-header h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0 0 0.75rem;
-  letter-spacing: -0.05em;
-  line-height: 1.2;
-}
-
-.page-header p {
-  color: var(--text-secondary);
-  font-size: 1.125rem;
-  margin: 0;
-  font-weight: 500;
-}
-
-/* Wellbeing Chat Section */
-.wellbeing-chat-container {
-  margin-bottom: 2.5rem;
-  animation: scaleIn 0.6s ease-out 0.2s backwards;
-}
-
-/* Statistics Section */
-.stats-section {
-  margin-bottom: 2.5rem;
-  animation: fadeInUp 0.6s ease-out 0.4s backwards;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.stats-grid .card {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  border: 2px solid transparent;
-  transition: all var(--transition-base);
-}
-
-.stats-grid .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: var(--primary-200);
-  box-shadow: var(--shadow-glow);
-}
-
-.stats-grid h3 {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  margin: 0 0 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.stat-value {
-  font-size: 3rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0;
-  line-height: 1;
-  letter-spacing: -0.05em;
-}
-
-/* History Card */
-.history-card {
-  animation: fadeInUp 0.6s ease-out 0.6s backwards;
-}
-
-.section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 1.5rem;
-  letter-spacing: -0.025em;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.section-title::before {
-  content: '';
-  width: 4px;
-  height: 2rem;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-full);
-}
-
-/* History List */
-.history-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.history-item {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-  border-radius: var(--radius-xl);
-  border-left: 5px solid var(--primary-500);
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-
-.history-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transition: transform var(--transition-base);
-}
-
-.history-item:hover {
-  transform: translateX(8px);
-  box-shadow: var(--shadow-lg);
-  background: var(--bg-primary);
-}
-
-.history-item:hover::before {
-  transform: scaleX(1);
-}
-
-/* Mood Section */
-.history-mood {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  min-width: 80px;
-}
-
-.mood-emoji {
-  font-size: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--transition-base);
-}
-
-.history-item:hover .mood-emoji {
-  transform: scale(1.2) rotate(-10deg);
-}
-
-.mood-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.facial-section-header {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* History Details */
-.history-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  min-width: 0;
-}
-
-.history-date {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  margin: 0;
-  font-weight: 600;
-}
-
-.history-stress {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.history-stress::before {
-  content: '📊';
-  font-size: 1.25rem;
-}
-
-/* History Activities */
-.history-activities {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.activity-tag {
-  padding: 0.375rem 0.875rem;
-  background: var(--gradient-primary);
-  color: white;
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: capitalize;
-  box-shadow: var(--shadow-sm);
-  white-space: nowrap;
-  transition: all var(--transition-base);
-}
-
-.activity-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-/* Empty State */
-.empty-state {
-  text-align: center;
-  padding: 4rem 2rem;
-  color: var(--text-secondary);
-}
-
-.empty-state-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  opacity: 0.5;
-}
-
-.empty-state h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
+.facial-section-header h2 {
+  font-size: 2rem;
+  color: #2d3748;
   margin: 0 0 0.5rem;
 }
 
-.empty-state p {
-  font-size: 1rem;
-  margin: 0;
+.facial-section-header p {
+  color: #718096;
+  font-size: 1.1rem;
 }
 
-/* Wellness Metrics */
-.wellness-metrics {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+/* Promo Section */
+.quick-exercises-promo {
+  margin-top: 3rem;
+  background: linear-gradient(135deg, #fff 0%, #f7fafc 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.metric-box {
-  padding: 1.5rem;
-  background: linear-gradient(135deg, var(--primary-50) 0%, var(--secondary-50) 100%);
-  border-radius: var(--radius-xl);
-  border: 2px solid var(--primary-200);
-  position: relative;
-  overflow: hidden;
-  transition: all var(--transition-base);
+.quick-exercises-promo h3 {
+  color: #2d3748;
+  margin: 0 0 1rem;
 }
 
-.metric-box::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, var(--primary-100) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.metric-box:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-lg);
-}
-
-.metric-box:hover::before {
-  opacity: 1;
-}
-
-.metric-box-title {
-  font-size: 0.875rem;
+.start-exercise-btn {
+  background: #48bb78;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
   font-weight: 700;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0 0 0.75rem;
-  position: relative;
-  z-index: 1;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
 }
 
-.metric-box-value {
-  font-size: 2rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0;
-  position: relative;
-  z-index: 1;
+.start-exercise-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(72, 187, 120, 0.4);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .history-item {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  padding: 1rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 
-  .history-mood {
-    flex-direction: row;
-    justify-content: flex-start;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .wellbeing-page {
-    padding: 1.5rem;
-  }
-
-  .page-header h1 {
-    font-size: 2rem;
-  }
-
-  .page-header p {
-    font-size: 1rem;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  }
-
-  .stat-value {
-    font-size: 2rem;
-  }
-
-  .history-item {
-    padding: 1.25rem;
-  }
-
-  .mood-emoji {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
   .wellbeing-page {
     padding: 1rem;
   }
 
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .wellbeing-header-hero {
+    padding: 2rem;
+    flex-direction: column;
+    text-align: center;
   }
 
-  .activity-tag {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.625rem;
+  .quick-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .action-pill {
+    justify-content: center;
   }
 }

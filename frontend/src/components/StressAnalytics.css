@@ -1,0 +1,155 @@
+.stress-analytics-container {
+    margin-top: 3rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.analytics-header {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.analytics-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.8rem;
+    color: #2d3748;
+    margin: 0;
+}
+
+.analytics-header p {
+    color: #718096;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.analytics-card {
+    background: white;
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.trend-card {
+    grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+    .trend-card {
+        grid-column: span 1;
+    }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin: 0;
+}
+
+.badge {
+    background: #ebf4ff;
+    color: #5a67d8;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge.new {
+    background: #f0fff4;
+    color: #38a169;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: #f7fafc;
+    border-radius: 16px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #2d3748;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.stat-value small {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.stat-value.down small {
+    color: #38a169;
+}
+
+.stat-desc {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 0.25rem;
+}
+
+.social-desc {
+    color: #718096;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.community-insight {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 12px;
+    font-size: 0.9rem;
+    color: #553c9a;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
