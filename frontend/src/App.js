@@ -11,6 +11,7 @@ import Wellbeing from './pages/Wellbeing';
 import Courses from './pages/Courses';
 import Timetable from './pages/Timetable';
 import Reminders from './pages/Reminders';
+import Settings from './pages/Settings';
 import './styles/globals.css';
 import './App.css';
 
@@ -71,6 +72,16 @@ function App() {
               <div className="main-content">
                 <Header title="Reminders" />
                 <Reminders />
+              </div>
+            </div>
+          } />
+
+          <Route path="/settings" element={
+            <div className="app-container">
+              <Sidebar />
+              <div className="main-content">
+                <Header title="Settings" />
+                <Settings />
               </div>
             </div>
           } />
